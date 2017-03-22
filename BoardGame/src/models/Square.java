@@ -2,69 +2,65 @@ package models;
 
 public class Square 
 {
-	//Instance Fields
-	private String type;	//change to squareType ?? --- JM
-	
-	private int position; 	//consider changing variable to either 
-							//currentPosition or squarePosition 
-							//depending on what it's intended to represent --- JM
-	/**
-     * Constructor for objects of class Square
-     */
-	public Square(String type, int position)
-	{
-		if(		(type.toUpperCase().equals("START")) 	|| 
-				(type.toUpperCase().equals("HARE")) 	||
-				(type.toUpperCase().equals("CARROT")) 	||
-				(type.toUpperCase().equals("NUMBER")) 	||
-				(type.toUpperCase().equals("LETTUCE")) 	||
-				(type.toUpperCase().equals("TORTOISE")) ||
-				(type.toUpperCase().equals("FINISH"))	)
-		{
-			this.type = type;
-		}
-		if((position >= 0) && (position <= 65))
-		{
-			this.position = position;
-		}
-	}
+    //Instance Fields
+	private int squareNumber;
+    private String squareType;
+    private boolean isOccupied; 
+ 
+    //Constructor
+   // public Square(int squareNumber, String squareType) {
+    //	this.squareNumber = squareNumber;
+    	//this.squareType = squareType;
+   // }
+    
 
-	//Getters
-	public int getPosition()
-	{
-		return position;
+   // public Square()
+	//{
+		//for(int squareNumber = 0; squareNumber < 66; squareNumber++)
+		//{
+		//	this.squareNumber = squareNumber;
+		//	if(squareNumber == 0)
+		//	{
+		//		squareType = "Start";
+		//	}
+		//	else if(squareNumber == 1 || squareNumber == 3 || squareNumber == 6 || squareNumber == 14 ||
+		//			squareNumber == 25 || squareNumber == 31 || squareNumber == 34 || squareNumber == 39
+		//			 || squareNumber == 46 || squareNumber == 51 || squareNumber == 58 || squareNumber == 62)
+		//	{
+		//		squareType = "Hare";
+		//	}
+		//}
+//	}
+		
+     
+    //Getters
+    public String getSquareType() {
+        return squareType;
+    }
+     
+    public boolean getIsOccupied() {
+        return isOccupied;
+    }
+    public int getSquareNumber() {
+		return squareNumber;
 	}
-	
-	public String getType()
-	{
-		return type;
-	}
-	
-	//Setters
-	public void setType(String type)
-	{
-		if(		(type.toUpperCase().equals("START")) 	|| 
-				(type.toUpperCase().equals("HARE")) 	||
-				(type.toUpperCase().equals("CARROT")) 	||
-				(type.toUpperCase().equals("NUMBER")) 	||
-				(type.toUpperCase().equals("LETTUCE")) 	||
-				(type.toUpperCase().equals("TORTOISE")) ||
-				(type.toUpperCase().equals("FINISH"))	)
-		{
-			this.type = type;
-		}
-	}
-	
-	public void setPosition(int position)
-	{
-		if((position >= 0) && (position <= 65))
-		{
-			this.position = position;
-		}
-	}
+     
+    //Setters
+    
+    //public void setSquareType(String squareType) {
+    //        this.squareType = squareType;
+    //}
+    
+    public void setIsOccupied(boolean isOccupied) {
+        this.isOccupied = isOccupied;
+    }
+
+	//public void setSquareNumber(int squareNumber) {
+	//	this.squareNumber = squareNumber;
+	//}
+    
+    public String toString() {
+    	return squareNumber + squareType + isOccupied;
+    }
 }
-
-
-
-
 
